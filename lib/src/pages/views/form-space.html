@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados de Informações do Doador</title>
+</head>
+<style>
+    h1 {
+        margin-top: 0px !important;
+    }
+
+    .div-mthr-layout {
+        margin: 0px 120px;
+        background-color: #eeeeee;
+    }
+
+    .div-txtarea {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0px;
+    }
+
+    .div-date {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dv-datainfo {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+    }
+
+    .btn-enviar {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        color: black;
+        background-color: #b9dedc;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=date],
+    input[type=password],
+    input[type=number] {
+        padding: 5px;
+        margin: 5px 0px;
+        border-radius: 5px;
+        border: 1px solid rgb(91, 90, 90);
+    }
+</style>
+
+<body>
+    <div class="div-mthr-layout">
+        <div style="margin: 0px 20px;">
+            <h1>Dados de Informações</h1>
+            <form action="">
+                <div class="dv-datainfo">
+                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Usuário">
+                    <input type="email" placeholder="E-mail">
+                    <input type="password" placeholder="Senha">
+                    <input type="text" placeholder="Telefone">
+                    <div class="div-date">
+                        <span style="color: grey;">Data de Nascimento</span>
+                        <input id="dateAge" type="date" placeholder="Data de Nascimento">
+                        <span id="valor-idade"></span>
+                    </div>
+                    <button onclick="calculateAge()">teste</button>
+                    <input type="number" placeholder="Peso (KG)">
+                    <input type="text" placeholder="Tipo Sanguíneo">
+                    <input type="text" placeholder="Fator RH">
+                    <input type="text" placeholder="Sexo">
+                    <input type="text" placeholder="Documento">
+                </div>
+                <div>
+                    <h2>Informações Adicionais</h2>
+                    <div>
+                        <div>
+                            <input type="checkbox">
+                            <label for="">Estar descansado (ter dormido pelo menos 6 horas nas últimas 24 horas)
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label for="">Estar alimentado, evitando alimentos gordurosos</label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label for="">Não tem com anemia no teste realizado imediatamente antes da doação
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label for="">Não tem com hipertensão ou hipotensão arterial no momento da doação
+                            </label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label for="">Não está com aumento ou diminuição dos batimentos cardíacos no momento da
+                                doação</label>
+                        </div>
+                        <div>
+                            <input type="checkbox">
+                            <label for="">Não está com febre no dia da doação
+                            </label>
+                        </div>
+                        <div class="div-txtarea">
+                            <label for="">Observações:</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="btn-enviar">Enviar</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function calculateAge() {
+        debugger;
+        var age = $('#dateAge').val();
+        $('').val();
+        const minute = 1000 * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+        const year = day * 365;
+
+        let years = Math.round(Date.now() / year);
+
+        let actualAge = Math.round();
+        return actualAge;
+    }
+
+</script>
