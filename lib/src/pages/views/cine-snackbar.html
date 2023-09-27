@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        padding: 25px;
+        background-color: white;
+        color: black;
+        font-size: 25px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid grey;
+    }
+
+    th {
+        padding: 15px 0px;
+    }
+
+    input {
+        border: 0px;
+        padding: 10px;
+        width: 93%;
+    }
+
+    .dark-mode {
+        background-color: black;
+        color: white;
+    }
+
+    .light-mode {
+        background-color: white;
+        color: black;
+    }
+
+    h1 {
+        margin: 15px;
+    }
+
+    .header-pres {
+        display: flex;
+        align-items: center;
+    }
+
+    .img-cine {
+        width: 270px;
+        border-radius: 50px;
+        box-shadow: 0px 6px 10px grey;
+    }
+
+    .main-intText {
+        display: flex;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <div class="header-pres">
+                <img class="img-cine"
+                    src="C:\Repositories\ls-wdevelop\lib\src\pages\images\istockphoto-1271522601-170667a.jpg"
+                    alt="Cinema Image">
+                <h1>Produtos para aproveitar
+                    enquanto assiste a um bom filme!</h1>
+            </div>
+            <div class="main-intText">
+                <h3>Aproveite para comprar suas bebidas, pipocas,
+                    petiscos e doces para saborear enquanto assiste a um filme!</h3>
+            </div>
+            <div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade solicitada</th>
+                            <th>Valor total do Item</th>
+                        </tr>
+                        <tr>
+                            <td>Refri 500ml</td>
+                            <td>R$ 10,00</td>
+                            <td><input id="refri500" type="number"></td>
+                            <td><label id="resrefri500" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Refri 700ml</td>
+                            <td>R$ 12,00</td>
+                            <td><input id="refri700" type="number"></td>
+                            <td><label id="resrefri700" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Água com e sem gás 500ml</td>
+                            <td>R$ 8,00</td>
+                            <td><input id="agua500" type="number"></td>
+                            <td><label id="resagua500" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Pipoca pequena salgada</td>
+                            <td>R$ 15,00</td>
+                            <td><input id="pipocaps" type="number"></td>
+                            <td><label id="respipocaps" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Pipoca média salgada</td>
+                            <td>R$ 20,00</td>
+                            <td><input id="pipocams" type="number"></td>
+                            <td><label id="respipocams" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Pipoca grande salgada</td>
+                            <td>R$ 25,00</td>
+                            <td><input id="pipocags" type="number"></td>
+                            <td><label id="respipocags" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Pipoca pequena doce</td>
+                            <td>R$ 18,00</td>
+                            <td><input id="pipocapd" type="number"></td>
+                            <td><label id="respipocapd" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Pipoca média doce</td>
+                            <td>R$ 24,00</td>
+                            <td><input id="pipocamd" type="number"></td>
+                            <td><label id="respipocamd" for=""></label></td>
+                        </tr>
+                        <tr>
+                            <td>Pipoca grande doce</td>
+                            <td>R$ 30,00</td>
+                            <td><input id="pipocagd" type="number"></button></td>
+                            <td><label id="respipocagd" for=""></label></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <button id="visualMode" onclick="toggleDarkMode()" value="">Modo Escuro</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var refri500 = document.getElementById('refri500');
+    var refri700 = document.getElementById('refri700');
+    var agua500 = document.getElementById('agua500');
+    var pipocaps = document.getElementById('pipocaps');
+    var pipocams = document.getElementById('pipocams');
+    var pipocags = document.getElementById('pipocags');
+    var pipocapd = document.getElementById('pipocapd');
+    var pipocamd = document.getElementById('pipocamd');
+    var pipocagd = document.getElementById('pipocagd');
+
+    var resrefri500 = document.getElementById('resrefri500');
+    var resrefri700 = document.getElementById('resrefri700');
+    var resagua500 = document.getElementById('resagua500');
+    var respipocaps = document.getElementById('respipocaps');
+    var respipocams = document.getElementById('respipocams');
+    var respipocags = document.getElementById('respipocags');
+    var respipocapd = document.getElementById('respipocapd');
+    var respipocamd = document.getElementById('respipocamd');
+    var respipocagd = document.getElementById('respipocagd');
+
+
+    refri500.onchange = function () {
+        resrefri500.textContent = `R$ ${10 * refri500.value}`
+    }
+
+    function toggleDarkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+
+    function toggleLIghtMode() {
+        var element = document.body;
+        element.classList.toggle("light-mode");
+    }
+
+    function calculaPrecosTabela() {
+
+
+        if (refri500) {
+
+        }
+    }
+</script>

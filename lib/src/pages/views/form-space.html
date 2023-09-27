@@ -7,6 +7,10 @@
     <title>Dados de Informações do Doador</title>
 </head>
 <style>
+    body{
+        font-family: 'Times New Roman', Times, serif;
+    }
+
     h1 {
         margin-top: 0px !important;
     }
@@ -112,30 +116,34 @@
                             <label for="">Observações:</label>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
                         </div>
-                        <button class="btn-enviar">Enviar</button>
-
+                        <button class="btn-enviar" onclick="calculateAge(document.getElementById('dateAge').value)">Enviar</button>
+                        <br>
                     </div>
                 </div>
             </form>
+            <button class="btn-enviar" onclick="redirect()">Outra tela</button>
         </div>
     </div>
 </body>
 
 </html>
 <script>
-    function calculateAge() {
-        debugger;
-        var age = $('#dateAge').val();
-        $('').val();
-        const minute = 1000 * 60;
-        const hour = minute * 60;
-        const day = hour * 24;
-        const year = day * 365;
+function redirect(){
+    window.location.href = "form-scnd-space.html";
+}
 
-        let years = Math.round(Date.now() / year);
+function calculateAge(birthdate) {
+  const birthDate = new Date(birthdate);
+  const currentDate = new Date();
 
-        let actualAge = Math.round();
-        return actualAge;
-    }
+  const yearsDiff = currentDate.getFullYear() - birthDate.getFullYear();
+  const monthsDiff = currentDate.getMonth() - birthDate.getMonth();
+
+  if (monthsDiff < 0 || (monthsDiff === 0 && currentDate.getDate() < birthDate.getDate())) {
+    return alert(`Você tem ${yearsDiff - 1} anos.`)
+  }
+
+  return alert(`Você tem ${yearsDiff} anos.`);
+}
 
 </script>
